@@ -1,28 +1,28 @@
 <?php
 /**
- * Plugin Name:       Boilerplate
- * Description:       Example block written with ESNext standard and JSX support – build step required.
+ * Plugin Name:       Startup Blocks
+ * Description:       This is startup blocks for creating some blocks.
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Version:           1.0.0
- * Author:            Zakaria Binsaifullah
- * Author URI:        https://makegutenblock.com
+ * Author:            Al-Mosabbir Rakib
+ * Author URI:        https://www.linkedin.com/in/md-al-mosabbir-rakib-364a25196
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       boilerplate
+ * Text Domain:       startup
  * Domain Path:       /languages
  */
 
  /**
   * @package Zero Configuration with @wordpress/create-block
-  *  [boilerplate] && [BOILERPLATE] ===> Prefix
+  *  [startup] && [STARTUP] ===> Prefix
   */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists( 'Boilerplate_Blocks' ) ) {
+if( ! class_exists( 'Startup_Blocks' ) ) {
 
-	final class Boilerplate_Blocks {
+	final class Startup_Blocks {
 
 		protected static $instance = null;
 
@@ -40,10 +40,10 @@ if( ! class_exists( 'Boilerplate_Blocks' ) ) {
 		 * @return void
 		 */
 		public function define_constants() {
-			define( 'BOILERPLATE_VERSION', '1.0.0' );
-			define( 'BOILERPLATE_DIR', __DIR__ );
-			define( 'BOILERPLATE_URL', plugin_dir_url( __FILE__ ) );
-			define( 'BOILERPLATE_PATH', plugin_dir_path( __FILE__ ) );
+			define( 'STARTUP_VERSION', '1.0.0' );
+			define( 'STARTUP_DIR', __DIR__ );
+			define( 'STARTUP_URL', plugin_dir_url( __FILE__ ) );
+			define( 'STARTUP_PATH', plugin_dir_path( __FILE__ ) );
 		}
 
 		/**
@@ -56,7 +56,7 @@ if( ! class_exists( 'Boilerplate_Blocks' ) ) {
 
 		/**
 		 * Initialize the plugin
-		 * @return \Boilerplate_Blocks
+		 * @return \Startup_Blocks
 		 */
 		public static function init() {
 			if( is_null( self::$instance ) ) {
@@ -69,11 +69,26 @@ if( ! class_exists( 'Boilerplate_Blocks' ) ) {
 
 /**
  * Initialize the plugin
- * @return \Boilerplate_Blocks
+ * @return \Startup_Blocks
  */
-function boilerplate_blocks_init() {
-	return Boilerplate_Blocks::init();
+function startup_blocks_init() {
+	return Startup_Blocks::init();
 }
 
 // kick-off the plugin
-boilerplate_blocks_init();
+startup_blocks_init();
+/*
+add_filter( 'block_categories_all', 'startup_blocks_new_block_category' );
+
+function startup_blocks_new_block_category( $cats ) {
+	$new = array(
+		'literallyanything' => array(
+			'slug'  => 'startup-blocks',
+			'title' => 'Startup Blocks'
+		)
+	);
+
+	$position = 0;
+	$cats = array_slice( $cats, 0, $position, true ) + $new + array_slice( $cats, $position, null, true );
+	return array_values( $cats );
+}*/

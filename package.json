@@ -1,13 +1,13 @@
 {
-	"name": "gutenberg-boilerplate",
-	"version": "2.0.0",
-	"description": "A boilerplate for start developing custom Gutenberg Blocks",
-	"author": "Zakaria Binsaifullah",
+	"name": "startup-blocks",
+	"version": "1.0.0",
+	"description": "A startup blocks for start developing custom Gutenberg Blocks",
+	"author": "Al-Mosabbir Rakib",
 	"license": "GPL-2.0-or-later",
 	"main": "build/blocks/index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/zakariabinsaifullah/gutenberg-boilerplate.git"
+		"url": ""
 	},
 	"keywords": [
 		"wordpress",
@@ -37,5 +37,9 @@
 		"@wordpress/scripts": "^26.12.0",
 		"@wordpress/stylelint-config": "^21.1.0",
 		"eslint-config-prettier": "^8.3.0"
+	},
+	"dependencies": {
+		"@wordpress/element": "^5.23.0",
+		"@wordpress/icons": "^9.37.0"
 	}
 }

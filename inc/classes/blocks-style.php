@@ -1,15 +1,15 @@
 <?php
 /**
  * Register Dynamic Styles for Blocks
- * @package Boilerplate
+ * @package Startup
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists( 'Boilerplate_Dynamic_Style' ) ) {
+if( ! class_exists( 'Startup_Dynamic_Style' ) ) {
 
-    class Boilerplate_Dynamic_Style {
-        
+    class Startup_Dynamic_Style {
+
         /**
          * Constructor
          * @return void
@@ -27,19 +27,19 @@ if( ! class_exists( 'Boilerplate_Dynamic_Style' ) ) {
                 if ( isset( $block[ 'attrs' ][ 'blockStyle' ] ) ) {
                     $style = $block[ 'attrs' ][ 'blockStyle' ];
                     $handle = isset( $block[ 'attrs' ][ 'uniqueId' ] ) ? $block[ 'attrs' ][ 'uniqueId' ] : 'boilerplate-blocks';
-    
+
                     // convert style array to string
                     if ( is_array( $style ) ) {
                         $style = implode( ' ', $style );
                     }
-    
+
                     // minify style to remove extra space
                     $style = preg_replace( '/\s+/', ' ', $style );
-                    
+
                     wp_register_style( $handle, false );
                     wp_enqueue_style( $handle );
                     wp_add_inline_style( $handle, $style );
-    
+
                 }
             }
             return $block_content;
@@ -47,4 +47,4 @@ if( ! class_exists( 'Boilerplate_Dynamic_Style' ) ) {
     }
 }
 
-new Boilerplate_Dynamic_Style(); // Initialize the class instance
+new Startup_Dynamic_Style(); // Initialize the class instance

@@ -6,17 +6,12 @@ const { InspectorControls } = wp.blockEditor;
 const { PanelBody, TextControl, BaseControl, ColorPalette } = wp.components;
 
 const Inspector = ({ attributes, setAttributes }) => {
-	const { content, textColor } = attributes;
+	const { textColor } = attributes;
 
 	return (
 		<InspectorControls>
-			<PanelBody title={__('Test Block Settings', 'boilerplate')}>
-				<TextControl
-					label={__('Content')}
-					value={content}
-					onChange={(v) => setAttributes({ content: v })}
-				/>
-				<BaseControl label={__('Color', 'boilerplate')} id="color">
+			<PanelBody title={__('Startup Blocks Settings', 'startup')}>
+				<BaseControl label={__('Color', 'startup')} id="color">
 					<ColorPalette
 						colors={[
 							{ name: 'red', color: '#f00' },

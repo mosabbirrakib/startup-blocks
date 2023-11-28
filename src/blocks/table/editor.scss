@@ -1,0 +1,51 @@
+/*
+* Style Works for Editor Only
+*/
+
+.startup__table {
+	padding: 20px;
+	border: 1px solid #ccc;
+	margin: 20px 0;
+}
+
+.startup__table label {
+	 margin-right: 10px;
+ }
+
+.startup__table input[type="number"] {
+	 width: 100%;
+	 padding: 5px;
+	 margin-bottom: 10px;
+ }
+
+.startup__table table {
+	 width: 100%;
+	 border-collapse: collapse;
+	 margin-top: 15px;
+ }
+
+.startup__table table td {
+	 border: 1px solid #ddd;
+	 padding: 8px;
+	 text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+	.startup__table input[type="number"] {
+		 width: 100%;
+		 margin-bottom: 10px;
+ 	}
+}

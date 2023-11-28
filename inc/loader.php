@@ -1,15 +1,15 @@
-<?php 
+<?php
 /**
  * Plugin Main Loader File
- * 
- * @boilerplate
+ *
+ * @startup
  */
 
  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
- if( ! class_exists( 'Boilerplate_Blocks_Loader' ) ) {
+ if( ! class_exists( 'Startup_Blocks_Loader' ) ) {
 
-    class Boilerplate_Blocks_Loader {
+    class Startup_Blocks_Loader {
 
         /**
          * Constructor
@@ -24,13 +24,13 @@
          * @return void
          */
         public function includes() {
-            require_once BOILERPLATE_PATH . 'inc/classes/blocks-category.php';
-            require_once BOILERPLATE_PATH . 'inc/classes/blocks-register.php';
-            require_once BOILERPLATE_PATH . 'inc/classes/blocks-style.php';
+            require_once STARTUP_PATH . 'inc/classes/blocks-category.php';
+            require_once STARTUP_PATH . 'inc/classes/blocks-register.php';
+            require_once STARTUP_PATH . 'inc/classes/blocks-style.php';
         }
 
     }
 
  }
 
- new Boilerplate_Blocks_Loader(); // Initialize the class instance
+ new Startup_Blocks_Loader(); // Initialize the class instance
